@@ -1,10 +1,11 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import './App.css'
+import Header from './Header/Header';
 
 const App = () => (
     <>
       <CssBaseline />  
-      <h1>Hello, World!</h1> 
+      <Header />
+      <h1>Hello, World!</h1>
     </>
   )
 
