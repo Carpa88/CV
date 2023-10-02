@@ -1,0 +1,1 @@
+export const CV_LINK = 'https://www.linkedin.com/in/volga-marozava-21217b89/';
