@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Avatar, AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography} from '@mui/material';
-import {Menu as MenuIcon} from '@mui/icons-material';
+import {Menu as MenuIcon, ExitToApp} from '@mui/icons-material';
 import { pages } from './menu';
 import { CV_LINK } from '../elements/constants';
 
@@ -97,16 +97,19 @@ const Header = () => {
             Volga Marozava
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
-            {pages.map((page) => (
-              <Button
-                key={page.url}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}
-              >
-                {page.title}
-              </Button>
-            ))}
+						{pages.map((page) => (
+							<Button
+								key={page.url}
+								onClick={handleCloseNavMenu}
+								sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}
+							>
+								{page.title}
+							</Button>
+						))}
           </Box>
+					<IconButton sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}>
+						<ExitToApp />
+					</IconButton>
         </Toolbar>
       </Container>
     </AppBar>
