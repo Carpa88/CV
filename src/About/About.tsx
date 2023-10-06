@@ -1,20 +1,20 @@
 import { alpha, Card, CardMedia, CardContent, Typography } from "@mui/material";
 
-const STyp = ({ children }: { children: string }) => (<Typography gutterBottom variant="h5" sx={{ mb: 3 }}>{children}</Typography>)
+const STyp = ({ children }: { children: string }) => (<Typography gutterBottom variant="h5">{children}</Typography>)
 
 const About = () => (
 	<>
 		<Card sx={{ display: 'flex' }}>
 			<CardMedia
-				sx={{ height: { xs: 140, md: 340 }, width: '100%' }}
+				sx={{ height: { xs: 160, md: 340 }, width: '100%' }}
 				image="../../assets/fall.jpg"
-				title="green iguana"
+				title="fall"
 			>
 				<CardContent
 					sx={theme => ({
 						display: 'flex',
 						flexDirection: 'column',
-						justifyContent: 'end',
+						justifyContent: 'space-around',
 						height: '100%',
 						color: theme.palette.common.white,
 						backgroundColor: alpha(theme.palette.common.black, 0.5),
@@ -28,7 +28,7 @@ const About = () => (
 			</CardMedia>
 		</Card>
 		<Typography variant="h2">About</Typography>
-		<Typography variant='body2' id='about' sx={{maxWidth:{sx: '100%', md: '80%'}}}>
+		<Typography variant='body1' id='about' sx={{ maxWidth: { sx: '100%', md: '80%' }, px: 2 }}>
 			Highly motivated and adaptable Software Engineer with a strong background 12 years in IT (10 years as BA and 2 years as Developer). Seeking opportunities to utilize my technical expertise and problem-solving skills to contribute to innovative projects and drive software development success.
 		</Typography>
 	</>
