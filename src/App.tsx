@@ -1,15 +1,13 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import Layout from './Layout';
+import theme from './elements/theme';
 
-const App = () :JSX.Element => {
-  const defaultTheme = createTheme();
- 
-  return (
-    <ThemeProvider theme={defaultTheme}>
+const App = () :JSX.Element => (
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Layout />
     </ThemeProvider>
-  )}
+  )
 
 export default App
