@@ -14,6 +14,7 @@ theme.typography.h2 = {
 	fontSize: '2.2rem',
 	fontWeight: "initial",
 	textAlign: 'center',
+	letterSpacing: '1px',
 	marginTop: '3rem',
 	marginBottom: '1rem',
 	color: theme.palette.secondary.dark,
@@ -30,6 +31,7 @@ theme.typography.h2 = {
 theme.typography.h5 = {
 	fontSize: '1.2rem',
 	fontWeight: "normal",
+	letterSpacing: '1px',
 	[theme.breakpoints.down('sm')]: {
 		fontSize: '0.9rem',
 	},
