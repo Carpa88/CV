@@ -14,11 +14,8 @@ const Skills = () => {
 
 	const [expanded, setExpanded] = React.useState<IExpands>(expandedSkillsData);
 	
-	console.log('start', expanded);
-	
 	const handleExpandClick = (title: string) => {
 		setExpanded({...expanded, [title]: !expanded[title]});
-		console.log('onClick', expanded);
 	};
 	return (
 		<Section title='Skills'>
