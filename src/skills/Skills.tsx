@@ -23,19 +23,19 @@ const Skills = () => {
 	return (
 		<Section title='Skills'>
 			<Grid container spacing={2} sx={{ display: 'flex', flexDirection: 'row' }}>
-				{skillsData.map(({title, preview, text}) => (
+				{skillsData.map(({title, preview, text, ...others}) => (
 					<Grid item xs={12} sm={6} md={4} key={title}>
 						<Card sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, backgroundColor: theme => alpha(theme.palette.common.black, 0.05) }}>
 							<CardContent>
 								<Typography gutterBottom variant="h5" component="div">
 									{title}
 								</Typography>
-								<Typography variant="body2" color="text.secondary" sx={{ height: '81px' }}>
+								<Typography variant="body2" color="text.secondary" sx={{ height: '81px', overflow: 'hidden' }}>
 									{preview}
 								</Typography>
 							</CardContent>
 							<CardActions sx={{ display: 'flex', justifyContent: 'space-between', mt: 'auto' }}>
-								<Button size="small">Share</Button>
+								<Button size="small">{others.years} years{others.projects? `, ${others.projects} projects`: ''} </Button>
 								<IconButton size="small" onClick={()=> handleExpandClick(title)}>
 									{text && (expanded[title] ? <ExpandLess /> : <ExpandMore />)}
 								</IconButton>
