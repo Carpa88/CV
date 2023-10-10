@@ -50,7 +50,7 @@ export const skillsData: { title: string; preview: string; text?: string, years:
 		years: 12,
 	},
 	{
-		title: 'Jira',
+		title: 'Confluence',
 		preview: "Create, collaborate, and organize all your work in one place. Confluence is a team workspace where knowledge and collaboration meet.",
 		text: 'Dynamic pages give your team a place to create, capture, and collaborate on any project or idea. Spaces help your team structure, organize, and share work, so every team member has visibility into institutional knowledge and access to the information they need to do their best work.',
 		years: 12,
