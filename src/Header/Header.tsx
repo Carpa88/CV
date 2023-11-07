@@ -1,8 +1,10 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import * as React from 'react';
 import {Avatar, AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography} from '@mui/material';
 import {Menu as MenuIcon, ExitToApp} from '@mui/icons-material';
-import { pages } from './menu';
+import { pages } from '../elements/menu';
 import { CV_LINK } from '../elements/constants';
+import Link from './../elements/Link';
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -70,7 +72,9 @@ const Header = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.title}</Typography>
+                  <Link to={page.url}>
+                    <Typography textAlign="center">{page.title}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -98,13 +102,11 @@ const Header = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
 						{pages.map((page) => (
-							<Button
-								key={page.url}
-								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}
-							>
-								{page.title}
-							</Button>
+							<Link to={page.url} key={page.url}>
+                <Button sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}>
+					        {page.title}
+                </Button>
+							</Link>
 						))}
           </Box>
 					<IconButton sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}>
