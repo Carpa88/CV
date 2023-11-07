@@ -11,20 +11,38 @@ const theme = createTheme({
 });
 
 theme.typography.h2 = {
-	fontSize: '2.2rem',
-	fontWeight: "initial",
-	textAlign: 'center',
+	fontSize: '2rem',
+	fontWeight: 200,
+	textAlign: 'start',
 	letterSpacing: '1px',
 	marginTop: '3rem',
 	marginBottom: '1rem',
 	color: theme.palette.secondary.dark,
 	[theme.breakpoints.down('sm')]: {
-		fontSize: '1.8rem',
+		fontSize: '1.6rem',
 		marginTop: '1rem',
 		marginBottom: '0.6rem',
 	},
 	[theme.breakpoints.up('md')]: {
 		fontSize: '2.4rem',
+	},
+};
+
+theme.typography.h3 = {
+	fontSize: '1.5rem',
+	fontWeight: 200,
+	textAlign: 'start',
+	letterSpacing: '1px',
+	marginTop: '3rem',
+	marginBottom: '1rem',
+	color: theme.palette.common.black,
+	[theme.breakpoints.down('sm')]: {
+		fontSize: '1.2rem',
+		marginTop: '1rem',
+		marginBottom: '0.6rem',
+	},
+	[theme.breakpoints.up('md')]: {
+		fontSize: '1.8rem',
 	},
 };
 
