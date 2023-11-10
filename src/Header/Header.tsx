@@ -109,9 +109,13 @@ const Header = () => {
 							</Link>
 						))}
           </Box>
+          <Link to='/singin'>
 					<IconButton sx={{ my: 2, color: 'white', display: 'block', mr: 1 }}>
-						<ExitToApp />
+            
+						  <ExitToApp />
+            
 					</IconButton>
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,9 +1,9 @@
 import TopBanner from "./TopBanner";
 
 const Home = () => (
-    <>
-    <TopBanner />
-    </>
+	<>
+		<TopBanner />
+	</>
 );
 
 export default Home;
