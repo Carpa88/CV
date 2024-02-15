@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material"
 import Section from "./Section"
 
-const ErrorPage = (status: number) => {
+const ErrorPage = ({status, title = "Неизвестная ошибка"}: {status?: number; title?: string}) => {
 
 	const error_message: () => string = () => {
 		switch (status) {
@@ -13,7 +13,7 @@ const ErrorPage = (status: number) => {
 
 	return (
 		<Section title='Ой-ой. Произошла ошибка.'>
-			<Typography variant="h3">{error_message()}</Typography>
+			<Typography variant="h3">{ status ? error_message() : title }</Typography>
 		</Section>
 		)
 }
