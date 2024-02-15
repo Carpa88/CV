@@ -12,4 +12,8 @@ export const pages = [
     title:'Skills',
     url: '/skills'
   },
+  {
+    title:'Use API',
+    url: '/api'
+  },
 ];
