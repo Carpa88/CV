@@ -5,27 +5,29 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { IForm } from "./types";
 
 const SinginForm = () => {
-  const { control, watch, handleSubmit, formState: { errors } } = useForm<IForm>({
+  const { control, handleSubmit, formState: { errors } } = useForm<IForm>({
     defaultValues: {
       remember: false,
-      email: 'srtrt@sg.gh',
-      password: '123345567',
+      email: '',
+      password: '',
     }
   })
-  console.log(watch('email'), watch('password'), watch('remember'))
+
   const onSubmit: SubmitHandler<IForm> = (data) => 
-    console.log(`You send email: ${data.email} and password: ${data.password}. "Remember me" is ${data.remember ? 'checked' : 'unchecked'}.`);
-    // console.log(data)
-    return (
+    alert(`You send email: ${data.email} and password: ${data.password}. "Remember me" is ${data.remember ? 'checked' : 'unchecked'}.`);
+
+  const onError = (e) => 
+    alert(`It's a mistake in field(s): ${Object.keys(e).join(', ')}`);
+
+  return (
     <>
-      <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+      <Avatar sx={{ m: 1, gcolor: 'secondary.main' }}>
         <LockOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
         Sign in
       </Typography>
-
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit, onError)}>
         <Controller
           name="email"
           control={control}
@@ -37,7 +39,7 @@ const SinginForm = () => {
             variant="outlined" 
             fullWidth
             error={!!errors.email}
-            helperText={errors.password && "It's a required field"}
+            helperText={errors.email && "It's a required field"}
             type='email'
             {...field}
             />
@@ -46,7 +48,7 @@ const SinginForm = () => {
         <Controller
           name="password"
           control={control}
-          rules={{ required: true, minLength: 6 }}
+          rules={{ required: 'Please, enter your password', minLength: 6 }}
           render={({ field }) => 
             <TextField 
               margin='dense' 
@@ -63,11 +65,11 @@ const SinginForm = () => {
         <Controller
           name="remember"
           control={control}
-          rules={{ required: true }}
           render={({ field }) => 
-            
-              <Checkbox color="primary" {...field}/>
-            
+            <FormControlLabel
+              label="Remember me"
+              control={<Checkbox color="primary" {...field}/>}
+            />   
           }
         />
         
@@ -80,11 +82,6 @@ const SinginForm = () => {
           Sign In
         </Button>
       </form>
-
-
-
-
-
       <Copyright sx={{ mt: 5 }} />
     </>
   )
