@@ -70,4 +70,16 @@ theme.typography.body1 = {
 	},
 };
 
+theme.typography.caption = {
+	fontSize: '0.8rem',
+	fontWeight: "normal",
+	lineHeight: '1.5rem',
+	[theme.breakpoints.down('sm')]: {
+		fontSize: '0.4rem',
+	},
+	[theme.breakpoints.up('md')]: {
+		fontSize: '1.2rem',
+	},
+};
+
 export default theme;
